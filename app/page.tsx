@@ -48,7 +48,7 @@ export default async function Home() {
                     ? `${news.text.substring(0, 50)}...`
                     : news.text}
                 </p>
-                <Button className="absolute bottom-5 right-5 px-4 bg-white text-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-amber-500 duration-300">
+                <Button className="absolute bottom-5 right-5 px-4 bg-gray-300 text-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-amber-500 duration-300">
                   <Link className="text-black" href={news.news_url}>
                     Read more
                   </Link>
@@ -81,7 +81,7 @@ export default async function Home() {
                     ? `${news.text.substring(0, 50)}...`
                     : news.text}
                 </p>
-                <Button className="absolute bottom-5 right-5 px-4 bg-white text-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-amber-500 duration-300">
+                <Button className="absolute bottom-5 right-5 px-4 bg-gray-300 text-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-amber-500 duration-300">
                   <Link className="text-black" href={news.news_url}>
                     Read more
                   </Link>
