@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        hostname: "crypto.snapi.dev",
+      },
+    ],
+  },
+};
+module.exports = nextConfig;

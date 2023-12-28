@@ -8,14 +8,12 @@ async function getLatest() {
       accept: "application/json",
       "X-CMC_PRO_API_KEY": `${process.env.CRYPTO_API_KEY}`,
     },
-    next: {
-      revalidate: 60 * 60 * 24,
-    },
+    next: { revalidate: 60 },
   };
 
   const res = await fetch(url, options);
   const response_json = await res.json();
-  const data = response_json.data;
+  const data = await response_json.data;
 
   return data;
 }
