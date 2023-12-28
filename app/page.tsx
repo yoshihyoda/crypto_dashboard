@@ -22,7 +22,9 @@ export default async function Home() {
           <TableRow>
             <TableHead>Name</TableHead>
             <TableHead>Symbol</TableHead>
+            <TableHead>1h %</TableHead>
             <TableHead>24h %</TableHead>
+            <TableHead>7d %</TableHead>
             <TableHead className="text-right">Amount</TableHead>
           </TableRow>
         </TableHeader>
@@ -31,6 +33,23 @@ export default async function Home() {
             <TableRow key={item.id}>
               <TableCell className="font-bold">{item.name}</TableCell>
               <TableCell>{item.symbol}</TableCell>
+              <TableCell
+                style={{
+                  color:
+                    item.quote.USD.percent_change_1h < 0
+                      ? "red"
+                      : item.quote.USD.percent_change_1h > 0
+                      ? "lightgreen"
+                      : "gray",
+                }}
+              >
+                {item.quote.USD.percent_change_1h < 0
+                  ? "▼"
+                  : item.quote.USD.percent_change_1h > 0
+                  ? "▲"
+                  : ""}
+                {Number(item.quote.USD.percent_change_1h).toFixed(4)}%
+              </TableCell>
               <TableCell
                 style={{
                   color:
@@ -46,7 +65,24 @@ export default async function Home() {
                   : item.quote.USD.percent_change_24h > 0
                   ? "▲"
                   : ""}
-                {Number(item.quote.USD.percent_change_24h).toFixed(4)}
+                {Number(item.quote.USD.percent_change_24h).toFixed(4)}%
+              </TableCell>
+              <TableCell
+                style={{
+                  color:
+                    item.quote.USD.percent_change_7d < 0
+                      ? "red"
+                      : item.quote.USD.percent_change_7d > 0
+                      ? "lightgreen"
+                      : "gray",
+                }}
+              >
+                {item.quote.USD.percent_change_7d < 0
+                  ? "▼"
+                  : item.quote.USD.percent_change_7d > 0
+                  ? "▲"
+                  : ""}
+                {Number(item.quote.USD.percent_change_7d).toFixed(4)}%
               </TableCell>
               <TableCell className="text-right">
                 {new Intl.NumberFormat("en-US", {
