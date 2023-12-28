@@ -22,21 +22,31 @@ export default async function Home() {
           <TableRow>
             <TableHead>Name</TableHead>
             <TableHead>Symbol</TableHead>
-            <TableHead>Date Added</TableHead>
+            <TableHead>24h %</TableHead>
             <TableHead className="text-right">Amount</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {data.map((item) => (
             <TableRow key={item.id}>
-              <TableCell className="font-medium">{item.name}</TableCell>
+              <TableCell className="font-bold">{item.name}</TableCell>
               <TableCell>{item.symbol}</TableCell>
-              <TableCell>
-                {new Date(item.date_added).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "2-digit",
-                  day: "2-digit",
-                })}
+              <TableCell
+                style={{
+                  color:
+                    item.quote.USD.percent_change_24h < 0
+                      ? "red"
+                      : item.quote.USD.percent_change_24h > 0
+                      ? "lightgreen"
+                      : "gray",
+                }}
+              >
+                {item.quote.USD.percent_change_24h < 0
+                  ? "▼"
+                  : item.quote.USD.percent_change_24h > 0
+                  ? "▲"
+                  : ""}
+                {Number(item.quote.USD.percent_change_24h).toFixed(4)}
               </TableCell>
               <TableCell className="text-right">
                 {new Intl.NumberFormat("en-US", {
