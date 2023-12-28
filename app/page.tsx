@@ -92,7 +92,6 @@ export default async function Home() {
         </div>
       </div>
       <Table>
-        <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
