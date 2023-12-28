@@ -123,7 +123,7 @@ export default async function Home() {
                     item.quote.USD.percent_change_1h < 0
                       ? "red"
                       : item.quote.USD.percent_change_1h > 0
-                      ? "lightgreen"
+                      ? "#229954"
                       : "gray",
                 }}
               >
@@ -140,7 +140,7 @@ export default async function Home() {
                     item.quote.USD.percent_change_24h < 0
                       ? "red"
                       : item.quote.USD.percent_change_24h > 0
-                      ? "lightgreen"
+                      ? "#229954"
                       : "gray",
                 }}
               >
@@ -157,7 +157,7 @@ export default async function Home() {
                     item.quote.USD.percent_change_7d < 0
                       ? "red"
                       : item.quote.USD.percent_change_7d > 0
-                      ? "lightgreen"
+                      ? "#229954"
                       : "gray",
                 }}
               >
