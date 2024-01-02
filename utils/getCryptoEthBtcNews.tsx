@@ -12,7 +12,6 @@ async function getCryptoEthBtcNews() {
   const res = await fetch(url, options);
   const json = await res.json();
   const data = await json.data;
-  console.log(data);
   return data;
 }
 
